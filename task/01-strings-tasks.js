@@ -130,7 +130,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    return removeFirstOccurrences(str,value);
+    return removeFirstOccurrences(str, value);
 }
 
 /**
@@ -221,7 +221,7 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    return encodeToRot13(str);
 }
 
 /**
