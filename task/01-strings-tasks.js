@@ -201,7 +201,7 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    return getRectangleString(width, height);
+    
 }
 
 
@@ -221,7 +221,7 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    return encodeToRot13
+    
 }
 
 /**
