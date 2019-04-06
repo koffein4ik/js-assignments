@@ -46,7 +46,7 @@ To start javascript assignments please follow the next steps:
 ### How to implement assignments using TDD fashion
 Now you are ready to implement assignments. Tasks modules are located in the **task** folder. Each module consists of several tasks for specified topic. Each task is usually a regular function:
 ```javascript
-  /**
+  /** 
    * Returns the result of concatenation of two strings.
    *
    * @param {string} value1
