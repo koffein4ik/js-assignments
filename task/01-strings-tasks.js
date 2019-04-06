@@ -130,7 +130,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    return 
+    return str.substring(str.indexOf(value), str.indexOf(value) + value.length);
 }
 
 /**
@@ -160,7 +160,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    return str.toUpperCase;
+    return str.toUpperCase();
 }
 
 /**
