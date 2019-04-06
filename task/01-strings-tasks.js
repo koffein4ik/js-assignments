@@ -55,7 +55,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    return 'Hello, ${firstName} ${lastName}!';
+    return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -130,7 +130,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    return str.substring(str.indexOf(value), str.indexOf(value) + value.length);
+    return str.replace(value, '');
 }
 
 /**
@@ -201,7 +201,9 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    
+    return '┌' + '─'.repeat(width - 2) + '┐\n' + 
+    ('│' + (' '.repeat(width - 2)) + '│\n').repeat(height - 2) + 
+    '└' + '─'.repeat(width - 2) + '┘\n';   
 }
 
 
@@ -221,7 +223,21 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    
+    var str1 = '';
+    for (var i = 0; i < str.length ; i++) {
+        let x = str.charCodeAt(i);
+        if ((x < 91) && (x > 64)) {
+            str1 += String.fromCharCode((x - 'A'.charCodeAt(0) + 13) % 26 + 'A'.charCodeAt(0));
+            continue;
+        }
+        if ((x < 123) && (x > 96)) {
+            str1 += String.fromCharCode((x - 'a'.charCodeAt(0) + 13) % 26 + 'a'.charCodeAt(0));
+            continue;
+        }
+        else
+          str1 += str.charAt(i);
+    }
+    return str1;
 }
 
 /**
@@ -267,7 +283,13 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+    var cards = [
+        'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+        'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+        'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+        'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
+    ];
+    return cards.indexOf(value);
 }
 
 
