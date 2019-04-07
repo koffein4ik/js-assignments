@@ -97,7 +97,6 @@ function angleBetweenClockHands(date) {
    var date1 = new Date(date);
    var hours = date1.getHours();
    var minutes = date1.getMinutes();
-   hours -= 3;
    hours %= 12;
    var degrees = (hours + (minutes /  60)) * 30 - minutes * 6; 
    return (Math.abs(degrees) * Math.PI / 180);

@@ -31,7 +31,7 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-   throw new Error('Not implemented');
+   return /\{[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\}/;
 }
 
 
@@ -53,7 +53,7 @@ function getRegexForGuid() {
  *
  */
 function getRegexForPitSpot() {
-   throw new Error('Not implemented');
+   return new RegExp('^s|^r|^pi');
 }
 
 
@@ -72,7 +72,8 @@ function getRegexForPitSpot() {
  * @return {RegExp}
  */
 function getRegexForIPv4() {
-   throw new Error('Not implemented');
+   let reg = '(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})';
+   return new RegExp('^' + reg +'[.]' + reg +'[.]' + reg +'[.]'+ reg +'$');
 }
 
 
@@ -91,7 +92,7 @@ function getRegexForIPv4() {
  * @return {RegExp}
  */
 function getRegexForSSN() {
-   throw new Error('Not implemented');
+   return /^(?!000)\d{3}-(?!00)\d{2}-(?!0000)\d{4}$/;
 }
 
 
