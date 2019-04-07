@@ -103,7 +103,7 @@ function angleBetweenClockHands(date) {
    if (degrees > 180)
     return Math.abs(degrees * Math.PI / 180 - Math.PI);
    else 
-    return (degrees * Math.PI / 180);
+    return Math.abs(degrees * Math.PI / 180);
 }
 
 
