@@ -322,7 +322,7 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-   var digits = ['zero', 'one','two', 'three', 'four', 'six', 'seven', 'eight', 'nine'];
+   var digits = ['zero', 'one','two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
    return arr.sort((a, b) => digits.indexOf(a) - digits.indexOf(b));
 }
 
@@ -564,7 +564,10 @@ function getElementByIndexes(arr, indexes) {
  * 
  */
 function swapHeadAndTail(arr) {
-    throw new Error('Not implemented');
+   var tail = arr.slice(Math.ceil(arr.length / 2), arr.length);
+   var mid = arr.slice(Math.floor(arr.length / 2), Math.ceil(arr.length / 2));
+   var head = arr.slice(0, Math.floor(arr.length / 2));
+   return tail.concat(mid).concat(head);
 }
 
 
