@@ -101,7 +101,7 @@ function angleBetweenClockHands(date) {
    hours %= 12;
    var degrees = (hours + (minutes /  60)) * 30 - minutes * 6; 
    if (degrees > 180)
-    return (degrees * Math.PI / 180 - Math.PI);
+    return Math.abs(degrees * Math.PI / 180 - Math.PI);
    else 
     return (degrees * Math.PI / 180);
 }
