@@ -136,8 +136,8 @@ function isTriangle(a,b,c) {
  *  
  */
 function doRectanglesOverlap(rect1, rect2) {
-     return ((((rect1.top + rect1.height) > rect2.top) && (rect2.top >= rect1.top)) || (((rect2.top + rect2.height) > rect1.top) && (rect1.top >= rect2.top)) ||
-             (((rect1.left + rect1.width) > rect2.left) && (rect2.left >= rect1.left)) || (((rect2.left + rect2.width) > rect1.left) && (rect1.left >= rect2.left)));
+     return !(rect1.left + rect1.width < rect2.left || rect2.left + rect2.width < rect1.left ||
+        rect1.top + rect1.height < rect2.top || rect2.top + rect2.height < rect1.top);
 }
 
 
@@ -184,7 +184,15 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
+    for (var i = 0; i < str.length; i++)
+    {
+        var ch = str.charAt(i);
+        if (str.indexOf(ch) === str.lastIndexOf(ch))
+        {
+            return ch;
+        }
+    }
+    return null;
 }
 
 
@@ -210,7 +218,11 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    var str = '';
+    str += isStartIncluded ?  '[' : '(';
+    str = str + a + ', ' + b;
+    str += isEndIncluded ? ']' : ')'; 
+    return str;
 }
 
 
@@ -227,7 +239,9 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    var arr = str.split("");
+    arr = arr.reverse();
+    return arr.join("");
 }
 
 
@@ -244,7 +258,11 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    var str = num.toString();
+    var arr = str.split("");
+    arr = arr.reverse();
+    arr =  arr.join("");
+    return Number(arr); 
 }
 
 
