@@ -33,6 +33,19 @@
  *
  */
 function* get99BottlesOfBeer() {
+    /*const iterable = {
+        [Symbol.iterator]() {
+            let numb = 99;
+            const iterator = {
+                next() {
+                    if(numb > 1)
+                    {
+                       return `{numb} bottles of beer on the wall, {numb} bottles of beer.\nTake one down and pass it around, {numb - 1} bottles of beer on the wall.`
+                    }
+                }
+            }
+        }
+    }*/
     throw new Error('Not implemented');
 }
 

@@ -220,7 +220,7 @@ function findFirstSingleChar(str) {
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
     var str = '';
     str += isStartIncluded ?  '[' : '(';
-    str = str + a + ', ' + b;
+    str += a > b ? (b + ', ' + a) : (a + ', ' + b);
     str += isEndIncluded ? ']' : ')'; 
     return str;
 }
