@@ -22,16 +22,15 @@
  *    console.log(r.height);      // => 20
  *    console.log(r.getArea());   // => 200
  */
-class Rectangle {
-    counstructor(width, height) {
-        this.height = height;
-        this.width = width;
-    }
 
-    getArea() {
-        return this.width * this.height;
-    }
-}
+class Rectangle {
+       constructor(width, height) {
+       this.height = height;
+       this.width = width;
+     }
+     getArea() {
+       return this.width * this.height;
+     }}
 
 
 /**
