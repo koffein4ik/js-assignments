@@ -33,7 +33,6 @@ class Rectangle {
     }
 }
 
-
 /**
  * Returns the JSON representation of specified object
  *
