@@ -272,7 +272,7 @@ function reverseInteger(num) {
  *
  * See algorithm here : https://en.wikipedia.org/wiki/Luhn_algorithm
  *
- * @param {number} cnn
+ * @param {number} ccn
  * @return {boolean}
  *
  * @example:
@@ -287,8 +287,25 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-    throw new Error('Not implemented');
+    var sum = 0;
+    var digits = String(ccn).split("");
+    for (var i = 0; i < digits.length; i++) {
+    var cardNum = parseInt(digits[i]);
+
+    if ((digits.length - i) % 2 === 0) {
+      cardNum *= 2;
+
+      if (cardNum > 9) {
+        cardNum -= 9;
+      }
+    }
+
+    sum += cardNum;
+  }
+
+  return sum % 10 === 0;
 }
+
 
 
 /**
@@ -456,7 +473,16 @@ function getCommonDirectoryPath(pathes) {
  *
  */
 function getMatrixProduct(m1, m2) {
-    throw new Error('Not implemented');
+    var sum;
+    for(var i = 0; i < m1[0].length; i++)
+    {
+        sum = 0;
+        for(var j = 0; j < m1[0].length; j++)
+        {
+            sum += m1[i][j] * m2[j][i];
+        }
+    }
+    //throw new Error('Not implemented');
 }
 
 

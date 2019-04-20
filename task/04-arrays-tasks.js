@@ -527,10 +527,10 @@ function group(array, keySelector, valueSelector) {
                newValues.push(values[index]);
             }
          });
+         resMap.set(val, newValues);
          return resMap;
       }
-   });
-
+   });   
 }
 
 
