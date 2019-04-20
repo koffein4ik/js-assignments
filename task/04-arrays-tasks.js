@@ -528,9 +528,9 @@ function group(array, keySelector, valueSelector) {
             }
          });
          resMap.set(val, newValues);
-         return resMap;
       }
    });   
+   return resMap;
 }
 
 
