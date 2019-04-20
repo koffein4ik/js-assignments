@@ -33,20 +33,22 @@
  *
  */
 function* get99BottlesOfBeer() {
-    /*const iterable = {
-        [Symbol.iterator]() {
-            let numb = 99;
-            const iterator = {
-                next() {
-                    if(numb > 1)
-                    {
-                       return `{numb} bottles of beer on the wall, {numb} bottles of beer.\nTake one down and pass it around, {numb - 1} bottles of beer on the wall.`
-                    }
-                }
-            }
-        }
-    }*/
-    throw new Error('Not implemented');
+    for(var i = 99; i >= 2; i--)
+    {
+        yield i + ' bottles of beer on the wall, ' + i + ' bottles of beer.';
+    }
+    if (i !== 2)
+    {
+        'Take one down and pass it around, ' + i - 1 + ' bottles of beer on the wall.';
+    }
+    else
+    {
+        'Take one down and pass it around, 1 bottle of beer on the wall.';
+    }
+    yield '1 bottle of beer on the wall, 1 bottle of beer.';
+    yield 'Take one down and pass it around, no more bottles of beer on the wall.';
+    yield 'No more bottles of beer on the wall, no more bottles of beer.';
+    yield  'Go to the store and buy some more, 99 bottles of beer on the wall.';
 }
 
 
