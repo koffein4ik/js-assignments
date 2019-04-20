@@ -23,7 +23,7 @@
  *    console.log(r.getArea());   // => 200
  */
 class Rectangle {
-    counstructor(width, height) {
+    constructor(width, height) {
         this.height = height;
         this.width = width;
     }
@@ -60,7 +60,7 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-    return Object.setPrototypeOf(JSON.parse(json), proto);
+     return Object.setPrototypeOf(JSON.parse(json), proto);
 }
 
 

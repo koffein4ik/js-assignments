@@ -441,7 +441,11 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-   throw new Error('Not implemented');
+   return Array.from({length: n}, function (el, i) {
+      let row = new Array(n).fill(0, 0, n);
+      row[i] = 1;
+      return row;
+   });
 }
 
 /**
@@ -508,7 +512,25 @@ function distinct(arr) {
  *   }
  */
 function group(array, keySelector, valueSelector) {
-   throw new Error('Not implemented');
+   var keys = array.map(keySelector);
+   var values = array.map(valueSelector);
+   var resMap = new Map();
+   keys.map(function(val, index, array)
+   {
+      if(!resMap.has(val))
+      {
+         var newValues = [];
+         keys.map(function(val2, index, array)
+         {
+            if(val2 === val)
+            {
+               newValues.push(values[index]);
+            }
+         });
+         return resMap;
+      }
+   });
+
 }
 
 
@@ -541,7 +563,8 @@ function selectMany(arr, childrenSelector) {
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
-    throw new Error('Not implemented');
+   indexes.map((elem) => {arr = arr[elem];});
+   return arr;
 }
 
 

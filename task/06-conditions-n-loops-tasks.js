@@ -415,29 +415,27 @@ function toNaryString(num, n) {
  *   ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(pathes) {
-    var p1;
-    var validpath = true;
-    for (var j = 1; j < pathes[0].length; j++)
+    var p1 = "";
+    var valitdpath = true;
+    var i = 0;
+    minLen = pathes[0].length;
+    var minLen;
+    pathes.map(function(elem) {if (elem.length < minLen) minLen = elem.length});
+    while(valitdpath)
     {
-        if (!validpath)
-            break;
-        p1 = pathes[0].substring(0, j);
-        for (var k = 0; k < pathes.length; k++)
+        var ch = pathes[0].charAt(i);
+        pathes.map(function(elem) {if(elem.charAt(i) !== ch) valitdpath = false});
+        if (i < minLen - 1)
         {
-            if (pathes[k].substring(0,j) !== p1)
-            {
-                validpath = false;
-                break;
-            }
+            i++;
         }
+        if (valitdpath)
+         p1 = p1 + ch.toString();
     }
-    if (p1.lastIndexOf("/") > 0)
-    {
-        p1 = p1.substring(0, lastIndexOf("/"));
-    }
+    if (!valitdpath)
+      p1 = p1.substring(0, p1.lastIndexOf("/") + 1);
     return p1;
 }
-
 
 /**
  * Returns the product of two specified matrixes.
@@ -493,7 +491,45 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-    throw new Error('Not implemented');
+    var arr = position;
+    var winner = undefined;
+    var win = false;
+    var pl;
+    for(var i = 0; i < 3; i++)
+    {
+        pl = position[i][0];
+        win = true;
+        for (var j = 0; j < 3; j++)
+        {
+            if(!(position[i][j] === pl))
+            {
+                win = false;
+            }
+        }
+        if (win)
+        {
+            winner = pl;
+        }
+    }
+    for(var i = 0; i < 3; i++)
+    {
+        pl = position[0][i];
+        win = true;
+        for (var j = 0; j < 3; j++)
+        {
+            if(!(position[j][i] === pl))
+            {
+                win = false;
+            }
+        }
+        if (win)
+        {
+            winner = pl;
+        }
+    }
+    winner = (position[0][0] == position [1][1] & position[1][1] == position[2][2]) ? position[0][0] : winner;
+    winner = (position[0][2] == position [1][1] & position[1][1] == position[2][0]) ? position[1][1] : winner;
+    return winner;
 }
 
 
