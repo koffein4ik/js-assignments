@@ -38,7 +38,7 @@ function* get99BottlesOfBeer() {
         yield i + ' bottles of beer on the wall, ' + i + ' bottles of beer.';
         if (i !== 2)
         {
-            yield 'Take one down and pass it around, ' + i - 1 + ' bottles of beer on the wall.';
+            yield 'Take one down and pass it around, ' + (i - 1) + ' bottles of beer on the wall.';
         }
         else
         {
